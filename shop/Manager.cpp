@@ -5,7 +5,9 @@
 #include <iostream>
 #include "Manager.h"
 Manager::Manager(const std::string &name, const std::string &id, double percentage, double baseSalary, int managementLevel)
-        : Employee(name, id, percentage, baseSalary), managementLevel(managementLevel) {}
+        : Employee(name, id, percentage, baseSalary) {
+                this->managementLevel = managementLevel;
+        }
 
 double Manager::calculateSalary() const {
     return baseSalary * managementLevel * percentage;
